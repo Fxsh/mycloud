@@ -1,0 +1,13 @@
+server:
+  port: 7009
+spring:
+  application:
+    name: eureka-7009
+eureka:
+  instance:
+    hostname: eureka-7009-id #右边名字
+  client:
+    service-url:
+      defaultZone: http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka,http://eureka7001.com:7001/eureka
+    register-with-eureka: false
+    fetch-registry: false
