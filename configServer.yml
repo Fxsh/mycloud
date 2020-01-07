@@ -1,0 +1,49 @@
+spring:
+ profiles:
+  active:
+  - dev
+---
+server:
+  port: 7005
+spring:
+  application:
+    name: eureka-7005
+	profiles: dev
+eureka:
+  instance:
+    hostname: eureka-7005-id #右边名字
+  client:
+    service-url:
+      defaultZone: http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka
+    register-with-eureka: false
+    fetch-registry: false
+---
+server:
+  port: 7006
+spring:
+  application:
+    name: eureka-7006
+	profiles: prod
+eureka:
+  instance:
+    hostname: eureka-7006-id #右边名字
+  client:
+    service-url:
+      defaultZone: http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka
+    register-with-eureka: false
+    fetch-registry: false
+---
+server:
+  port: 7007
+spring:
+  application:
+    name: eureka-7007
+	profiles: beta
+eureka:
+  instance:
+    hostname: eureka-7007-id #右边名字
+  client:
+    service-url:
+      defaultZone: http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka
+    register-with-eureka: false
+    fetch-registry: false
